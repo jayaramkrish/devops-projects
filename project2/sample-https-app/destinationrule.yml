@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: https-app-dr
+  namespace: default
+spec:
+  host: https-app-service.default.cluster.local
+  trafficPolicy:
+    tls:
+      mode: SIMPLE

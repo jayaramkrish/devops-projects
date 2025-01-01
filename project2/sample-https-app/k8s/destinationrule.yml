@@ -1,0 +1,11 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: https-app-destinationrule
+  namespace: default
+spec:
+  host: https-app-service.default.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: SIMPLE # Use SIMPLE for HTTPS traffic
+

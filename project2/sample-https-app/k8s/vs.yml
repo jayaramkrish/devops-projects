@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  creationTimestamp: "2024-12-21T19:30:28Z"
+  generation: 7
+  name: https-app-virtualservice
+  namespace: default
+  resourceVersion: "229528"
+  uid: c8d60edf-31e1-41da-bf24-2f742ad309e8
+spec:
+  hosts:
+  - "localhost"
+  gateways:
+  - https-app-gateway
+  tls:
+  - match:
+      - port: 31100
+    route:
+      - destination:
+            host:
+              https-app-service.default.cluster.local
+            port:
+              number: 8000
+  
